@@ -1,0 +1,13 @@
+class Solution{
+  public:
+    long long int floorSqrt(long long int x) 
+    {
+        // Your code goes here   
+        int i=1;
+        while(x>=i*i)
+        {
+            i++;
+        }
+        return i-1;
+    }
+};

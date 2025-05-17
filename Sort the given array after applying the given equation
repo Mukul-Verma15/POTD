@@ -1,0 +1,6 @@
+ vector<int> res;
+        for(int x:arr){
+            res.push_back(A*x*x+B*x+C);
+        }
+        sort(res.begin(),res.end());
+        return res;

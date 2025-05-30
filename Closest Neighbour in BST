@@ -1,0 +1,41 @@
+/*
+class Node {
+  public:
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int x) {
+        data = x;
+        left = NULL;
+        right = NULL;
+    }
+}; */
+
+class Solution {
+  public:
+    void solveInorder(Node* root, int k, int &ans){
+        
+        if(root==NULL){
+            return;
+        }
+        //LNR
+        
+        if(root->left){
+            solveInorder(root->left,k,ans);
+        }
+        if(k >= root->data){
+            ans = root->data;
+        }
+        if(root->right){
+            solveInorder(root->right,k,ans);
+        }
+        
+    }
+    int findMaxFork(Node* root, int k) {
+        // code here
+           int ans = -1;
+        solveInorder(root,k,ans);
+        return ans;
+    }
+};

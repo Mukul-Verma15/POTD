@@ -1,0 +1,18 @@
+ int Fibonacci(int n){
+        if(n == 0 or n == 1){
+            return n;
+        }
+        int p1 = 0, p2 = 1;
+        for(int i = 2; i<=n; i++){
+            int curr = p1+p2;
+            p1 = p2;
+            p2 = curr;
+        }
+        
+        return p2;
+    }
+    int countConsec(int n) {
+        // code here
+        int ans = (1<<n) - Fibonacci(n+2);
+        
+        return ans;
